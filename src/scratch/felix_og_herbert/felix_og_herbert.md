@@ -25,11 +25,11 @@ tatt, går poengsummen din ned.
 
 - [ ] Start et nytt prosjekt.
 
-- [ ] Trykk på `i`{.blockmotion} i hjørnet av ![Sprite1](sprite1.png) og
-  bytt navn på figuren til `Felix`.
+- [ ] Endre kattens navn fra Figur 1 
+  til `Felix`ved å skrive over navnet i figurvinduet.
 
-- [ ] Sørg for at Felix kun ser til høyre og venstre ved å sette
-  rotasjonsmåte til
+- [ ] Sørg for at Felix kun ser til høyre og venstre ved å klikke på pilene under retning. Dette styrer
+  rotasjonsmåte.
   ![Høyre/Venstre](../bilder/rotasjonsmate-hv.png).
 
 - [ ] Klikk på scenen ved siden av Felix i vinduet for figurer. Velg fanen
@@ -37,17 +37,16 @@ tatt, går poengsummen din ned.
   ![Velg en ferdig bakgrunn](../bilder/velg-bakgrunn.png) for å
   importere en ferdig bakgrunn. Velg den bakgrunnen du vil.
 
-- [ ] Klikk på Felix, velg `Skript`-fanen og lag dette
+- [ ] Klikk på Felix, velg `Kode`-fanen og lag dette
   skriptet:
 
   ```blocks
   når grønt flagg klikkes
-  for alltid
+  gjenta for alltid
       pek mot [musepeker v]
       gå (10) steg
       neste drakt
-      trommeslag (3 v) som varer (0.25) takter
-  slutt
+      spill lyden mjau til den er ferdig
   ```
 
 ## Test prosjektet {.flag}
@@ -77,21 +76,19 @@ Det kan likevel være lurt å lagre manuelt innimellom.
 
 ## Sjekkliste {.check}
 
-- [ ] Lag en ny figur ved å trykke på
+- [ ] Lag en ny figur ved å trykke på kattesymbolen
   ![Velg figur fra biblioteket](../bilder/hent-fra-bibliotek.png)
   og velg figuren `Dyr/Mouse1`.
 
 - [ ] Bytt navn på figuren til `Herbert`.
 
-- [ ] Gjør Herbert mindre enn Felix ved å trykke på
-  ![krymp](../bilder/krymp.png) (øverst mot midten av vinduet). Prøv
-  seks klikk.
+- [ ] Gjør Herbert mindre enn Felix ved å endre størrelsen fra 100 til noe mindre. Prøv for eksempel 75.
 
 - [ ] Gi Herbert dette skriptet:
 
   ```blocks
   når grønt flagg klikkes
-  for alltid
+  gjenta for alltid
       gå til [musepeker v]
       pek mot [Felix v]
   slutt
@@ -117,11 +114,11 @@ __Klikk på det grønne flagget.__
 
   ```blocks
   når grønt flagg klikkes
-  for alltid
+  gjenta for alltid
       pek mot [musepeker v]
       gå (10) steg
       neste drakt
-      trommeslag (3 v) som varer (0.25) takter
+      spill lyden mjau til den er ferdig
       hvis <berører [Herbert v]?>
           si [Tok deg!] i (1) sekunder
       slutt
@@ -143,18 +140,18 @@ __Klikk på det grønne flagget.__
 ## Sjekkliste {.check}
 
 - [ ] Endre skriptet til Felix slik at det sender en melding og lager en
-  lyd når han fanger Herbert:
+  lyd når han fanger Herbert. OBS: du må lage en melding selv. For å gjøre det, velg klossen "sendmelding", velg "Ny melding" og skriv Fanget!. Du kan også spille inn din egen lyd når han blir fanget. Veld klossen "spill lyden", "spill inn lyd", si ja til mikrofon. Da kan du si noe (for eksempel Ha Ha!), gi det et navn og velg lyden!
 
   ```blocks
   når grønt flagg klikkes
-  for alltid
+  gjenta for alltid
       pek mot [musepeker v]
       gå (10) steg
       neste drakt
-      trommeslag (3 v) som varer (0.25) takter
+      spill lyden mjau til den er ferdig
       hvis <berører [Herbert v]?>
           send melding [Fanget! v]
-          trommeslag (1 v) som varer (0.25) takter
+          spill lyden (spill inn din egen lyd) til den er ferdig
           si [Tok deg!] i (1) sekunder
           vent (1) sekunder
       slutt
@@ -163,17 +160,16 @@ __Klikk på det grønne flagget.__
 
 - [ ] Velg Herbert og gå til `Drakter`-fanen.
 
-- [ ] Hent en ny drakt ved å trykke på
+- [ ] Hent en ny drakt ved å trykke på kattesymbolen til venstre for Herbert, og søkelyset
   ![Velg drakt fra biblioteket](../bilder/hent-fra-bibliotek.png)
   og velg `Fantasi/ghost2-a`
 
-- [ ] Gjør drakten mindre ved å velge ![Krymp](../bilder/krymp.png) og
-  trykke seks ganger på spøkelsesdrakten.
+- [ ] Gjør drakten mindre ved å velge forstørrelsesglasset og trykke på minus.
 
 - [ ] Endre navnene på Herberts drakter slik at musedrakten heter
   `levende` og spøkelsesdrakten heter `død`.
 
-- [ ] Gå til `Skript`-fanen, og lag et nytt skript for
+- [ ] Gå til `Kode`-fanen, og lag et nytt skript for
   Herbert for å gjøre ham om til et spøkelse. Ikke slett det gamle
   skriptet:
 
@@ -204,7 +200,7 @@ __Klikk på det grønne flagget.__
 
 ## Sjekkliste {.check}
 
-- [ ] På `Skript`-fanen under kategorien `Data`{.blockdata}, lag en ny
+- [ ] På `Kode`-fanen under kategorien `Variabler`{.blockdata}, lag en ny
   variabel. Kall variabelen for `Poeng`, og la den gjelde for alle
   figurer.
 
@@ -213,13 +209,13 @@ __Klikk på det grønne flagget.__
   Legg merke til at `Poeng `{}` 0 `{.blockdata}` ` dukket opp øverst til
   venstre i spillet ditt.
 
-- [ ] Klikk på `Scene` til venstre på skjermen, ved siden av
-  `Figurer`. Lag disse to skriptene på scenen:
+- [ ] Klikk på `Scene` til høyre på skjermen, ved siden av
+  `Figurer`. Lag disse to skriptene på scenen (i kodevinduet):
 
   ```blocks
   når grønt flagg klikkes
   sett [Poeng v] til [0]
-  for alltid
+  gjenta for alltid
       vent (1) sekunder
       endre [Poeng v] med (1)
   slutt

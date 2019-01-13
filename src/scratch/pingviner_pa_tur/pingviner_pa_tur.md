@@ -51,14 +51,10 @@ seg._
 
 - [ ] Når du starter et nytt Scratch-prosjekt ser du en kattefigur. I dette
   spillet skal vi ikke bruke denne. Vi begynner derfor med å slette
-  kattefiguren:
+  kattefiguren. I figurvinduet, høyreklikk på katten og velg slett.
 
-    Klikk på ![Slett](../bilder/slett.png) øverst i menyen, og klikk deretter på
-    kattefiguren for å slette denne.
-
-- [ ] Vi skal nå legge til en pingvinfigur. Klikk på ![Velg figur fra
-  biblioteket](../bilder/hent-fra-bibliotek.png) ved siden av __Ny figur:__
-  omtrent midt på skjermen. Skroll nedover skjermen til du finner en
+- [ ] Vi skal nå legge til en pingvinfigur. Klikk på kattesymbolet![Velg figur fra
+  biblioteket](../bilder/hent-fra-bibliotek.png) og velg søk. Skroll nedover skjermen til du finner en
   pingvinfigur (det er flere å velge mellom). Klikk en av dem, og deretter
   __OK__.
 
@@ -73,7 +69,7 @@ seg._
 
   ```blocks
   når grønt flagg klikkes
-  for alltid
+ gjenta for alltid
       gå (10) steg
       sprett tilbake ved kanten
   slutt
@@ -131,7 +127,7 @@ _La oss se hvordan vi kan kontrollere hvordan pingvinen beveger seg._
   når grønt flagg klikkes
   sett størrelse til (40) %
   begrens rotasjon [vend sideveis v]
-  for alltid
+  gjenta for alltid
       gå (4) steg
       sprett tilbake ved kanten
   slutt
@@ -146,7 +142,7 @@ _La oss se hvordan vi kan kontrollere hvordan pingvinen beveger seg._
   begrens rotasjon [vend sideveis v]
   gå til [tilfeldig sted v]
   pek i retning (tilfeldig tall fra (1) til (360))
-  for alltid
+  gjenta for alltid
       gå (4) steg
       sprett tilbake ved kanten
   slutt
@@ -180,20 +176,18 @@ Bergens gater._
     Alternativt kan du [lage ditt eget kart](../kart/kart.html) ved å gå til
     [denne siden](../kart/kart.html).
 
-- [ ] For å legge til en ny bakgrunn klikker du på ![Last opp bakgrunn fra
-  fil](../bilder/hent-fra-fil.png) under __Ny bakgrunn__ helt til venstre på
-  siden. Velg deretter filen du nettopp lastet ned.
+- [ ] For å legge til en ny bakgrunn klikker du på scenevinduet og ![Last opp bakgrunn fra
+  fil](../bilder/hent-fra-fil.png) under __Ny bakgrunn__. Velg deretter filen du nettopp lastet ned.
 
 - [ ] La oss nå markere Akvariet i Bergen på kartet. Hent en ny figur ved å
-  klikke på ![Velg figur fra biblioteket](../bilder/hent-fra-bibliotek.png).
-  Velg figuren `Button5`, og plasser denne ytterst på Nordnes for å vise hvor
+  klikke på kattesymbolet![Velg figur fra biblioteket](../bilder/hent-fra-bibliotek.png).
+  Velg figuren `Button`, og plasser denne ytterst på Nordnes for å vise hvor
   Akvariet er.
 
     ![Bilde av Nordnes i Bergen med kryss på akvariet](nordnes.png)
 
 - [ ] Vi vil nå endre navn på akvariefiguren slik at vi enklere husker hva den
-  er. Klikk på `i`{.blockmotion} øverst til venstre på akvariefiguren i
-  figurlisten. Endre navnet fra `Button5` til `Akvariet`.
+  er. Bare skriv over`Button` og endre navnet til `Akvariet`.
 
 
 # Steg 4: Hjelp pingvinen hjem {.activity}
@@ -206,15 +200,15 @@ Akvariet._
 I dette spillet skal vi kontrollere pingvinen ved å klikke på kartet. Pingvinen
 skal da snu seg vekk fra der vi holder musepekeren før den går videre.
 
-- [ ] Klikk på __Scene__ nede til venstre på skjermen. Dette gir oss muligheten
+- [ ] Klikk på __Scene__ nede til høyre på skjermen. Dette gir oss muligheten
   til å skrive kode som gjelder for bakgrunnen og ikke for pingvinen.
 
-- [ ] Lag den følgende nye koden på Scenen:
+- [ ] Lag den følgende nye koden på Scenen. OBS: i klossen "Sendmelding" må du velge "Ny melding" og skriv inn "snu retning".
 
   ```blocks
   når scenen klikkes :: hat events
   send melding [snu retning v]
-  trommeslag (1 v) som varer (0.25) takter
+  spill lyden plopp til den er ferdig
   ```
 
     En slik _melding_ er en beskjed programmet ditt sender til alle figurene. Du
@@ -227,7 +221,7 @@ skal da snu seg vekk fra der vi holder musepekeren før den går videre.
   ```blocks
   når jeg mottar [snu retning v]
   pek mot [musepeker v]
-  vend venstre (180) grader
+  snu venstre (180) grader
   ```
 
 ## Test prosjektet {.flag}
@@ -253,7 +247,7 @@ _Vi skal til slutt se hvordan pingvinen kan oppdage at den har kommet hjem!_
   begrens rotasjon [vend sideveis v]
   gå til [tilfeldig sted v]
   pek i retning (tilfeldig tall fra (1) til (360))
-  for alltid
+  gjenta for alltid
       gå (4) steg
       sprett tilbake ved kanten
       hvis <berører [Akvariet v] ?>
@@ -282,10 +276,10 @@ er noen ideer:
   lage en kopi av den.
 
 - [ ] Kan du lage en test for om alle pingvinene har kommet hjem? Denne lager du
-  enklest på akvariefiguren. Du bør bruke en `for alltid`{.blockcontrol}-løkke,
+  enklest på akvariefiguren. Du bør bruke en `gjenta for alltid`{.blockcontrol}-løkke,
   en `hvis`{.blockcontrol}-test samt `< > og < >`{.b}- og `berører
   [ v]`{.b}-klosser.
 
 - [ ] Kanskje vi kan telle poeng hver gang en pingvin finner veien til Akvariet?
   Til dette trenger du noe som heter variabler. Disse finner du under
-  `Data`{.blockdata}. Prøv selv om du får til noe!
+  `Variabler`{.blockdata}. Prøv selv om du får til noe!
